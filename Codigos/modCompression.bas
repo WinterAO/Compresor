@@ -383,6 +383,8 @@ On Local Error GoTo errhandler
 
     Dim SourcePath As String
     
+    SourcePath = OutPath
+    
     Select Case File_Type
         Case Graphics
             SourceFileExtension = ".png"
@@ -390,7 +392,7 @@ On Local Error GoTo errhandler
             OutputFilePath = SrcPath & "\Graficos" & Extension
             
         Case Ambient
-            SourceFileExtension = ".amb"
+            SourceFileExtension = ".wav"
             SourceFilePath = SourcePath & "\Ambient\"
             OutputFilePath = SrcPath & "\Ambient" & Extension
         
@@ -415,7 +417,7 @@ On Local Error GoTo errhandler
             OutputFilePath = SrcPath & "\Mapas" & Extension
             
         Case Interface
-            SourceFileExtension = ".gif"
+            SourceFileExtension = ".bmp"
             SourceFilePath = SourcePath & "\Interface\"
             OutputFilePath = SrcPath & "\Interface" & Extension
             
@@ -425,9 +427,9 @@ On Local Error GoTo errhandler
             OutputFilePath = SrcPath & "\Fuentes" & Extension
             
         Case Skin
-            SourceFileExtension = ".gif"
+            SourceFileExtension = ".bmp"
             SourceFilePath = SourcePath & "\Skins\" & FrmMain.txtSkinName.Text & "\"
-            OutputFilePath = SrcPath & FrmMain.txtSkinName.Text & Extension
+            OutputFilePath = SrcPath & "\" & FrmMain.txtSkinName.Text & Extension
                     
         Case Minimap
             SourceFileExtension = ".*"
